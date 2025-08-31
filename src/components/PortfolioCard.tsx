@@ -55,7 +55,7 @@ export default function PortfolioCard() {
           <h2 className="text-lg font-semibold text-[#A1A1AA]">
             Portfolio Total
           </h2>
-          <div className="text-6xl font-[500] text-neutral-100">
+          <div className="text-6xl font-[500] text-neutral-100 mt-5">
             {formatUSD(total)}
           </div>
           {lastUpdated && (
@@ -66,7 +66,7 @@ export default function PortfolioCard() {
         </div>
 
         {/* Donut chart */}
-        <div className="flex flex-col w-[100%] sm:w-[50%] items-start gap-4">
+        <div className="flex flex-col w-[100%] sm:w-[50%] items-start gap-5">
           <h2 className="text-lg font-semibold text-[#A1A1AA] sm:ml-7">
             Portfolio Total
           </h2>

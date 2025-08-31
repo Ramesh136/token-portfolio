@@ -61,17 +61,14 @@ export default function AddTokenModal({ open, onClose }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div className="w-full m-4 max-w-2xl rounded-xl border border-neutral-800 bg-neutral-900 py-6 px-1.5">
-        <h2 className="mb-4 text-lg font-semibold text-neutral-100">
-          Add Token
-        </h2>
 
         {/* Search */}
         <input
           type="text"
-          placeholder="Search tokens…"
+          placeholder="Search tokens (e.g., ETH, SOL)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="mb-4 w-full rounded-md border border-neutral-700 bg-neutral-800 px-2 py-2 text-neutral-100 placeholder-neutral-500"
+          className="mb-4 w-full border-b border-neutral-700  px-2 py-2 text-neutral-100 placeholder-neutral-500"
         />
 
         {/* List */}
