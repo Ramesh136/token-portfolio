@@ -14,7 +14,6 @@ import { useEventListneres } from "../hooks/useEventlisteners";
 import StarIcon from "../assets/star";
 import RefreshIcon from "../assets/refresh";
 import PlusIcon from "../assets/plus";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import CustomConnectButton from "./CustomConnectButton";
 
 function formatTime(iso: string | null) {

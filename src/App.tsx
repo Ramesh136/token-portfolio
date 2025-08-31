@@ -3,7 +3,7 @@ import './App.css'
 import Body from './components/Body';
 
 function App() {
-  const [dark, setDark] = useState(
+  const [dark] = useState(
     localStorage.getItem("theme") === "dark" ||
     (!("theme" in localStorage) &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
