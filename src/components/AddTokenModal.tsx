@@ -33,7 +33,7 @@ export default function AddTokenModal({ open, onClose }: Props) {
       let nonAddedTokens = res.filter(token => !ids.includes(token.id))
       setTrending(nonAddedTokens);
       setTrendingLoading(false);
-    });
+    }).finally(()=>setTrendingLoading(false));
   }, [open]);
 
   // Handle search
@@ -49,7 +49,7 @@ export default function AddTokenModal({ open, onClose }: Props) {
         let nonAddedTokens = res.filter(token => !ids.includes(token.id))
         setResults(nonAddedTokens ?? []);
         setLoading(false);
-      });
+      }).finally(()=>setLoading(false));
     }, 400);
     return () => clearTimeout(t);
   }, [search, open]);
