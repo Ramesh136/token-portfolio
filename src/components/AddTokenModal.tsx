@@ -20,15 +20,19 @@ export default function AddTokenModal({ open, onClose }: Props) {
   const [results, setResults] = useState<any[]>([]);
   const [trending, setTrending] = useState<any[]>([]);
   const [selected, setSelected] = useState<string[] | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [trendingLoading , setTrendingLoading] = useState(false);
 
   // Load trending on mount
   useEffect(() => {
     if (!open || !ids) return;
     setTrending([]);
+    setTrendingLoading(true);
     trendingCoins().then((res) => {
       let nonAddedTokens = res.filter(token => !ids.includes(token.id))
       setTrending(nonAddedTokens);
+      setTrendingLoading(false);
     });
   }, [open]);
 
@@ -76,7 +80,7 @@ export default function AddTokenModal({ open, onClose }: Props) {
             <div className="p-4 text-center text-neutral-400">Searching…</div>
           ) : list.length === 0 ? (
             <div className="p-4 text-center text-neutral-500">
-              {search ? "No results found" : (trending.length === 0 ? "Search for more tokens" : "Loading trending…")}
+              {search ? "No results found" : (!trendingLoading ? "Search for more tokens" : "Loading trending…")}
             </div>
           ) : (<>
           <h4 className="text-left pb-4 px-4 text-[#71717A] text-xs">{search.length > 0 ? "Search results" :"Trending results"}</h4>
