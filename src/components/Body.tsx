@@ -4,7 +4,6 @@ import type { RootState, AppDispatch } from "../store";
 import { loadPrices } from "../store/pricesSlice";
 import { setLastUpdated } from "../store/watchlistSlice";
 
-// import ConnectButton from "./Wallet/ConnectButton";
 import PortfolioCard from "./PortfolioCard";
 import WatchlistTable from "./WatchListTable";
 import AddTokenModal from "./AddTokenModal";
@@ -34,16 +33,10 @@ export default function Body() {
   const ids = useSelector((s: RootState) => s.watchlist.ids);
   const lastUpdated = useSelector((s: RootState) => s.watchlist.lastUpdated);
   const loading = useSelector((s: RootState) => s.prices.loading);
-  // const error = useSelector((s: RootState) => s.prices.error);
-  // const pricesById = useSelector((s: RootState) => s.prices.byId);
-
-  // const { total, pie } = usePortfolioTotals();
 
   // For event delegation and cltr+s to open search modal
   useEventListneres({ setAddOpen });
 
-  // console.log("env",import.meta.env.VITE_COINGECKO_API_KEY);
-  
 
   // Fetch prices whenever the watchlist changes
   useEffect(() => {
@@ -89,13 +82,7 @@ export default function Body() {
       {/* Main content */}
       <main className="mx-auto w-full py-6 space-y-6">
         {/* Portfolio card */}
-        <PortfolioCard
-        // total={total}
-        // pieData={pie}
-        // lastUpdatedLabel={formatTime(lastUpdated)}
-        // loading={loading && !Object.keys(pricesById).length}
-        // error={error ?? undefined}
-        />
+        <PortfolioCard />
 
         {/* Watchlist header */}
         <div className="flex items-center justify-between">

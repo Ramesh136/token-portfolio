@@ -1,15 +1,13 @@
 import { useEffect } from "react";
 
 export function useEventListneres({ setAddOpen }: any) {
-  // To handle modal open
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Check for Ctrl+S or Cmd+S
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
-        e.preventDefault(); // Prevent browser save dialog
+        e.preventDefault();
         setAddOpen((open:any) => !open);
         // console.log("Custom Ctrl+S action triggered!");
-        // 👉 Put your custom logic here
       }
     };
 

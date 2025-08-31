@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#F7931A','#627EEA','#14F195','#A6A6A6','#FF5B5B','#7C4DFF']; // match Figma if specified
+const COLORS = ['#F7931A','#627EEA','#14F195','#A6A6A6','#FF5B5B','#7C4DFF'];
 
 export default function DonutChart({ data }: { data: { name: string; value: number }[] }) {
   const nonzero = data.filter(d => d.value > 0);
