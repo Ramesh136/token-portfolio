@@ -1,0 +1,71 @@
+#root {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+#app-wrapper {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+.row-actions--wrapper {
+  display: none;
+}
+
+td.active .row-actions--wrapper {
+  display: block;
+}
+
+tr:last-child td .row-actions--wrapper {
+  transform: translateY(-19%);
+}
+
+tr:first-child td .row-actions--wrapper {
+  transform: translateY(18%);
+}
+
+
+input,
+svg {
+  outline: none;
+}
+
+input.holding-input:focus,
+input.holding-input:focus-visible {
+  box-shadow: 0px 0px 0px 4px #A9E85133;
+  outline: none;
+  border: 1px solid #A9E851;
+}
+
+button.holdings-save {
+  opacity: 0;
+}
+
+input.holding-input {
+  pointer-events: none;
+}
+
+input.holding-input:focus+button.holdings-save {
+  opacity: 1;
+}
+
+label.selected {
+  background-color: #A9E8510F;
+}
