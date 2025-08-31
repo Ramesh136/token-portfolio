@@ -48,7 +48,7 @@ export default function WatchlistTable() {
   }
 
   const handleHoldingsSave = () => {
-    console.log("saving");
+    // console.log("saving");
   }
 
   const handleEditholding = (e:any) => {
